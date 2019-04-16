@@ -2,22 +2,25 @@
 
 <%= link_to "Create new user",new_path, class: "btn btn-xs btn-primary" %>
 <br><br><b>List of User</b><br><br>
-
-<div class="container ">
-  <table class="table">
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Phone No</th>
-    </tr>
-    </thead>
-    <tbody>
-      <% @user.each do |user|%>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.phno %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+  <% if @user.empty?  %>
+    <p>No Data available, please create new users</p>
+  <% else %>
+    <div class="container ">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone No</th>
+        </tr>
+        </thead>
+        <tbody>
+          <% @user.each do |user|%>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.phno %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>

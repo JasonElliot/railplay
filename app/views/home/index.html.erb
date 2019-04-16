@@ -1,11 +1,23 @@
 <h1>Home</h1>
+
 <%= link_to "Create new user",new_path, class: "btn btn-xs btn-primary" %>
-<br><br>
-<% @user.each do |user|%>
-  <table>
-    <td>
-    <tr><%= user.name                   %></tr>
-    <tr><%= user.phno %></tr>
-    </td>
+<br><br><b>List of User</b><br><br>
+
+<div class="container ">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone No</th>
+    </tr>
+    </thead>
+    <tbody>
+      <% @user.each do |user|%>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.phno %></td>
+      </tr>
+      <% end %>
+    </tbody>
   </table>
-<% end %>
+</div>

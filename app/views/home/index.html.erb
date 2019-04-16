@@ -1,6 +1,6 @@
 <h1>Home</h1>
-<%= link_to "Create new user",new_path %>
-<br>
+<%= link_to "Create new user",new_path, class: "btn btn-xs btn-primary" %>
+<br><br>
 <% @user.each do |user|%>
   <table>
     <td>
